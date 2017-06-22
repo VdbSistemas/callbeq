@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">    
+<html xmlns="http://www.w3.org/1999/xhtml"        
+      xmlns:h="http://java.sun.com/jsf/html"     
+      xmlns:f="http://java.sun.com/jsf/core"    
+      xmlns:p="http://primefaces.org/ui">    
+
+    <h:head>    
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>    
+        <title>Cadastro de Cliente</title> 
+    </h:head>    
+
+    <h:body>
+
+        <p:tabMenu activeIndex="" style="font-size: 14px">
+            <p:menuitem value="Solicitar Serviço" outcome="index" >
+                <f:param name="i" value="0" />
+            </p:menuitem>
+            <p:menuitem value="Clientes" outcome="index" >
+                <f:param name="i" value="1" />
+            </p:menuitem>
+             <p:menuitem value="Provedores" outcome="index" >
+                <f:param name="i" value="1" />
+            </p:menuitem>
+        </p:tabMenu>
+        
+        <p:fieldset legend="Atendimento" toggleable="true" style="font-size: 14px">
+            <h:panelGrid columns="6" width="100%">
+                
+                 <p:outputLabel value="Atend.:" for="atendente"/>
+                 <p:inputText id="atendente" size="50" value="" required="ture"/>
+                
+                <p:outputLabel value="Serviço:" for="servico"/>
+                <p:selectOneMenu id="servico" value="" style="width:150px">
+                    <f:selectItem itemLabel="Assinatura" itemValue=""/>
+                    <f:selectItem itemLabel="Reparo" itemValue=""/>
+                </p:selectOneMenu>
+                
+                 <p:outputLabel value="Provedor:" for="provedor"/>
+                <p:selectOneMenu id="provedor" value="" style="width:150px">
+                    <f:selectItem itemLabel="Provedor" itemValue=""/>
+                </p:selectOneMenu>
+            </h:panelGrid>
+        </p:fieldset>
+        
+        <p:panel header="Cliente" style="font-size: 14px">
+
+            <p:fieldset legend="Dados Pessoais" toggleable="true">
+                <h:panelGrid columns="6" width="100%">
+                    <h:outputLabel value="Nome:" for="nome"/>
+                    <p:inputText id="nome" size="50" value="" required="ture" requiredMessage="É necessário informar o nome do cliente !"/>
+                    <h:outputLabel value="RG:" for="rg"/>
+                    <p:inputMask id="rg" value="" required="true" requiredMessage="É necessário informar o RG do cliente!" mask="999999999999"/>
+                    <h:outputLabel value="CPF:" for="cpf"/>
+                    <p:inputMask id="cpf" value="" required="true" requiredMessage="É necessário informar o CPF do cliente!" mask="999.999.999-99"/>
+                    <h:outputLabel value="Nasc.:" for="dataNasc"/>
+                    <p:inputMask id="dataNasc" value="" required="true" requiredMessage="É necessário informar a data de nascimento do cliente!" mask="99/99/9999"/>
+                </h:panelGrid>
+            </p:fieldset>
+
+            <p:fieldset legend="Endereço" toggleable="true">
+                <h:panelGrid columns="6" width="100%">
+                    <h:outputLabel value="Rua:" for="endereco"/>
+                    <p:inputText id="endereco" size="48" value="" required="ture" requiredMessage="É necessário informar o endereço do cliente !"/>
+                    <h:outputLabel value="Número:" for="numero"/>
+                    <p:inputText id="numero" size="20" value="" required="ture" requiredMessage="É necessário informar o numero do endereço do cliente !"/>
+                    <h:outputLabel value="Bairro:" for="bairro"/>
+                    <p:inputText id="bairro" size="20" value="" required="ture" requiredMessage="É necessário informar o bairro do cliente !"/>
+                    <h:outputLabel value="Cidade:" for="cidade"/>
+                    <p:inputText id="cidade" size="20" value="" required="ture" requiredMessage="É necessário informar a cidade do cliente !"/>
+                    <h:outputLabel value="Estado:" for="estado"/>
+                    <p:inputText id="estado" size="20" value="" required="ture" requiredMessage="É necessário informar o estado do cliente !"/>
+                    <h:outputLabel value="CEP:" for="cep"/>
+                    <p:inputMask id="cep" value="" required="true" requiredMessage="É necessário informar o CEP do cliente!" mask="99999-999"/>
+                </h:panelGrid>
+            </p:fieldset>
+
+            <p:fieldset legend="Contato" toggleable="true">
+                <h:panelGrid columns="6" width="100%">
+                    <h:outputLabel value="Tel.:" for="telefone"/>
+                    <p:inputMask id="telefone" value="" required="true" requiredMessage="É necessário informar o telefone do cliente!" mask="(99)9999-9999"/>
+                    <h:outputLabel value="Cel:" for="celular"/>
+                    <p:inputMask id="celular" value="" required="true" requiredMessage="É necessário informar o celular do cliente!" mask="(99)99999-9999"/>
+                    <h:outputLabel value="Cel:" for="celularDois"/>
+                    <p:inputMask id="celularDois" value="" required="true" requiredMessage="É necessário informar o celular alternativo do cliente!" mask="(99)99999-9999"/>
+                </h:panelGrid>
+            </p:fieldset>
+
+        </p:panel>
+    </h:body>
+
+</html>    
